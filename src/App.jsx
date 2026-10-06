@@ -60,7 +60,7 @@ const juiceProducts = [
   },
   {
     id: 4,
-    title: 'Pineapple Crush',
+    title: 'Pineapple ',
     subtitle: 'Tropical Summer Drink',
     bgColor: '#FECA57',
     bottleImg: bottle4,
