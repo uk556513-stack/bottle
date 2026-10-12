@@ -311,18 +311,31 @@ export default function App() {
 
       {/* Swiper Slider */}
       <Swiper
-        modules={[Navigation, EffectFade, Mousewheel]}
-        navigation={true}
-        mousewheel={{ releaseOnEdges: true }}
-        speed={700}
-        onSlideChange={handleSlideChange}
-        className="mySwiper"
-        style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 10 }}
-      >
-        {juiceProducts.map((slide) => (
-          <SwiperSlide key={slide.id} />
-        ))}
-      </Swiper>
+  modules={[Navigation, EffectFade, Mousewheel]}
+  loop={true}
+  rewind={false}
+  navigation={true}
+  mousewheel={{
+    forceToAxis: true,
+    releaseOnEdges: false,
+    sensitivity: 1,
+  }}
+  speed={700}
+  onSlideChange={handleSlideChange}
+  className="infinity-swiper"
+  style={{
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    zIndex: 10,
+  }}
+>
+  {juiceProducts.map((slide) => (
+    <SwiperSlide key={slide.id}>
+      <div className="swiper-hit-area" />
+    </SwiperSlide>
+  ))}
+</Swiper>
 
       {/* Order Modal */}
       <AnimatePresence>
